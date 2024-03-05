@@ -1,6 +1,6 @@
 # Kindle Photoframe
 
-![Photoframe](photoframe.jpg 'Photoframe')
+<img src="photoframe.jpg" alt="Photoframe" width="30%" height="auto">
 
 I have implemented a Photoframe function for my Kindle 4 (also known as the no touch version):
 * Shows a random picture from those stored in a directory on the Kindle.
@@ -81,9 +81,9 @@ It is a plain text file with the value is expressed in seconds.
 
 ### Logging
 
-I defined a minimal logging, that is enabled by deleting the [`photoframe/NOLOGGING`](photoframe/NOLOGGING) file.
+I defined a minimal logging, that is enabled by deleting the [`photoframe/NO_LOGGING`](photoframe/NO_LOGGING) file.
 Relevant events are logged in [`photoframe/photoframe.log`](photoframe/photoframe.log).
-I create an empty `photoframe/NOLOGGING` file to disable logging.
+I create an empty `photoframe/NO_LOGGING` file to disable logging.
 
 ### Running
 
@@ -99,8 +99,8 @@ Now whenever the Kindle goes to sleep it shows a random picture from the ones in
 
 ## 3D-printed frame
 
-![3D-printed frame](kindle_frame.jpg '3D-printed frame')
-![CAD](kindle_cad.jpg 'CAD')
+<img src="kindle_frame.jpg" alt="3D-printed frame" width="30%" height="auto">
+<img src="kindle_cad.jpg" alt="CAD" width="30%" height="auto">
 
 I modeled a frame for the Kindle, then 3D-printed and glued it.
 
