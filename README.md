@@ -55,7 +55,7 @@ Whenever the Kindle wakes up, the script checks if it is caused by the RTC or no
 * if so, it triggers a picture update following the steps listed before
 * if not, it means that the wakeup come from a human action and no action is taken
 
-I copied the [photoframe](`photoframe`) directory of this repository in the `/mnt/us` directory of the Kindle.
+I copied the [`photoframe`](photoframe) directory of this repository in the `/mnt/us` directory of the Kindle.
 
 ### Picture folder
 
