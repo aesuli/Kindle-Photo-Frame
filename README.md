@@ -76,13 +76,13 @@ Any change made to the content of the `picture` directory is effective at the ne
 
 ### Update frequency
 
-The time interval of update is stored it in the [photoframe/delay.txt](`photoframe/delay.txt`) file.
+The time interval of update is stored it in the [`photoframe/delay.txt`](photoframe/delay.txt) file.
 It is a plain text file with the value is expressed in seconds.
 
 ### Logging
 
-I defined a minimal logging, that is enabled by deleting the [photoframe/NOLOGGING](`photoframe/NOLOGGING`) file.
-Relevant events are logged in [photoframe/photoframe.log](`photoframe/photoframe.log`).
+I defined a minimal logging, that is enabled by deleting the [`photoframe/NOLOGGING`](photoframe/NOLOGGING) file.
+Relevant events are logged in [`photoframe/photoframe.log`](photoframe/photoframe.log).
 I create an empty `photoframe/NOLOGGING` file to disable logging.
 
 ### Running
