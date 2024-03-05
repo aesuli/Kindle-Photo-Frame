@@ -1,6 +1,6 @@
 # Kindle Photoframe
 
-[~Andrea Esuli~](https://esuli.it)
+[*Andrea Esuli*](https://esuli.it)
 
 <img src="photoframe.jpg" alt="Photoframe" width="30%" height="auto">
 
