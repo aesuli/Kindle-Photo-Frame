@@ -1,5 +1,7 @@
 # Kindle Photoframe
 
+[~Andrea Esuli~](https://esuli.it)
+
 <img src="photoframe.jpg" alt="Photoframe" width="30%" height="auto">
 
 I have implemented a Photoframe function for my Kindle 4 (also known as the no touch version):
