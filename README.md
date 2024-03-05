@@ -24,7 +24,7 @@ If you replicate any of the actions reported in this repository you are doing it
 
 ### Jailbreak
 
-Running a photoframe software on the the Kindle required to jailbreak it (please read the [DISCLAIMER](#DISCLAIMER) again) and ssh access. I followed [the steps reported here] (https://gist.github.com/estysdesu/c90478aac75b732820be6720254aeda7), which are mainly based on [this wiki page](https://wiki.mobileread.com/wiki/Kindle4NTHacking). The part on recovering the root password using [this website](https://www.sven.de/kindle/) was a key information the get ssh/scp access to the device.
+Running a photoframe software on the the Kindle required to jailbreak it (please read the [DISCLAIMER](#DISCLAIMER) again) and ssh access. I followed [the steps reported here](https://gist.github.com/estysdesu/c90478aac75b732820be6720254aeda7), which are mainly based on [this wiki page](https://wiki.mobileread.com/wiki/Kindle4NTHacking). The part on recovering the root password using [this website](https://www.sven.de/kindle/) was a key information the get ssh/scp access to the device.
 
 ### FBInk
 
