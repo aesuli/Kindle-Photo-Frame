@@ -36,11 +36,11 @@ I copied the content of the zip file in that `fbink` directory.
 From a ssh console I created a symlink to the executables in the `/usr/local/bin` directory:
 
 ```
-> cd /usr/local/bin
-> mntroot rw
-> ln -s /mnt/us/fbink/K3/bin/fbink fbink
-> ln -s /mnt/us/fbink/K3/bin/fbdepth fbdepth
-> mntroot ro
+cd /usr/local/bin
+mntroot rw
+ln -s /mnt/us/fbink/K3/bin/fbink fbink
+ln -s /mnt/us/fbink/K3/bin/fbdepth fbdepth
+mntroot ro
 ```
 
 ### Photoframe scripts
@@ -62,8 +62,8 @@ I copied the [`photoframe`](photoframe) directory of this repository in the `/mn
 I created a `picture` folder in the `/mnt/us/documents` directory:
 
 ```
-> cd /mnt/us/documents
-> mkdir pictures
+cd /mnt/us/documents
+mkdir pictures
 ```
 
 The pictures to be shown by Photoframe must be put here.
@@ -92,12 +92,57 @@ I create an empty `photoframe/NO_LOGGING` file to disable logging.
 From a ssh console, I start the `photoframe.sh` script in background:
 
 ```
-> cd /mnt/us/photoframe
-> photoframe.sh &
-> exit
+cd /mnt/us/photoframe
+photoframe.sh &
+exit
 ```
 
 Now whenever the Kindle goes to sleep it shows a random picture from the ones in the `picture` directory, and it changes them with the frequency stated in the `delay.txt` file.
+
+### Autostart
+
+To have photoframe.sh to automatically running every time the Kindle boots, a modification the script `/etc/init.d/boot_finished` must be modified:
+```
+cd /etc/init.d
+mntroot rw
+nano /etc/init.d/bootfinished
+mntroot ro
+```
+
+modify the function `after_framework_start()` in the `boot_finished` file by adding the line in the end that starts `photoframe.sh`:
+
+```
+after_framework_start() {
+
+    _t_fw=$(sed -e 's/ .*/000/ ; s/\.\(...\).*/\1/' < /proc/uptime )
+    msg "time=$_t_fw:boot time after framework starts, in milliseconds" I "fwboot"
+
+    # originally /usr/sbin/loginfo is in /etc/rcS.d/S20syslog-ng
+    # but fail to run since dbus/lipc is not ready yet
+    /usr/sbin/loginfo essentials --force
+
+    # Make sure we're not in screensaver on system startup
+    lipc-set-prop ${_POWERD_TARGET} ${_POWERD_WAKEUP_PROP} 1
+
+    # Move setting the governor here
+    /etc/init.d/ckimage start
+    /etc/init.d/governor start
+    ${TINYROT} --force
+
+    sleep 1
+
+    if [ -e /mnt/us/ENABLE_AUTOTEST ]; then
+        if [ -e /test/unit_tests/stal/stal ]; then
+            /test/unit_tests/stal/stal &
+        fi
+    fi
+
+    # This is the line to be added to have photoframe starting automatically on boot.
+    /mnt/us/photoframe/photoframe.sh &
+
+    return 0
+}
+```
 
 ## 3D-printed frame
 
