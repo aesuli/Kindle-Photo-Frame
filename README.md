@@ -101,7 +101,7 @@ Now whenever the Kindle goes to sleep it shows a random picture from the ones in
 
 ### Autostart
 
-To have photoframe.sh to automatically running every time the Kindle boots, a modification the script `/etc/init.d/boot_finished` must be modified:
+To have photoframe.sh to automatically running every time the Kindle boots, the script `/etc/init.d/boot_finished` must be modified:
 ```
 cd /etc/init.d
 mntroot rw
