@@ -105,7 +105,7 @@ To have photoframe.sh to automatically running every time the Kindle boots, a mo
 ```
 cd /etc/init.d
 mntroot rw
-nano /etc/init.d/bootfinished
+nano /etc/init.d/boot_finished
 mntroot ro
 ```
 
