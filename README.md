@@ -78,7 +78,7 @@ Any change made to the content of the `picture` directory is effective at the ne
 
 ### Update frequency
 
-The time interval of update is stored it in the [`photoframe/delay.txt`](photoframe/delay.txt) file.
+The time interval of update is stored it in the [`photoframe/delta.txt`](photoframe/delta.txt) file.
 It is a plain text file with the value is expressed in seconds.
 
 ### Logging
@@ -93,11 +93,11 @@ From a ssh console, I start the `photoframe.sh` script in background:
 
 ```
 cd /mnt/us/photoframe
-photoframe.sh &
+./photoframe.sh &
 exit
 ```
 
-Now whenever the Kindle goes to sleep it shows a random picture from the ones in the `picture` directory, and it changes them with the frequency stated in the `delay.txt` file.
+Now whenever the Kindle goes to sleep it shows a random picture from the ones in the `picture` directory, and it changes them with the frequency stated in the `delta.txt` file.
 
 ### Autostart
 
