@@ -29,6 +29,7 @@ changescreensaver()
 {
 	PICTURE_FILE="$PICTURE_DIR/$($BASE_DIR/random_file.sh "$PICTURE_DIR")"
 	log "changescreensaver $PICTURE_FILE"
+	sleep 3
 	$BASE_DIR/show.sh "$PICTURE_FILE"
 }
 
@@ -48,11 +49,13 @@ setwakeup()
 	log "setwakeup $DELTA"
 }
 
-lipc-wait-event -m com.lab126.powerd goingToScreenSaver,resuming,readyToSuspend | while read event; do
+lipc-wait-event -m com.lab126.powerd goingToScreenSaver,resuming,wakeupFromSuspend,readyToSuspend | while read event; do
 	case "$event" in
 		goingToScreenSaver*)
 			changescreensaver;;
 		resuming*)
+			wakeup;;
+		wakeupFromSuspend*)
 			wakeup;;
 		readyToSuspend*)
 			setwakeup;;
