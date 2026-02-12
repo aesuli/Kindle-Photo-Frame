@@ -144,6 +144,10 @@ after_framework_start() {
 }
 ```
 
+## Contributions
+
+Thanks to Evan Mair for improving the image refresh code.
+
 ## 3D-printed frame
 
 <img src="kindle_frame.jpg" alt="3D-printed frame" width="30%" height="auto">
